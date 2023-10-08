@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.7.11 on win32)" generated="20231008 20:42:40.235" rpa="false" schemaversion="4">
+<suite id="s1" name="Company Login Update Details" source="d:\CDU STUDY MATERIALS\SEMESTER 2\PRT582 SOFTWARE ENGINEERING\job-portal-django\robot\company\company_login_update_details\company_login_update_details.robot">
+<test id="s1-t1" name="Open Website" line="14">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231008 20:42:41.018" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000/company_login/'.</msg>
+<status status="PASS" starttime="20231008 20:42:41.014" endtime="20231008 20:42:43.856"/>
+</kw>
+<doc>This test case verifies that the user is able to open the URL</doc>
+<status status="PASS" starttime="20231008 20:42:41.009" endtime="20231008 20:42:43.860"/>
+</test>
+<test id="s1-t2" name="Login to your account" line="18">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>username</arg>
+<arg>company@company.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 20:42:43.878" level="INFO">Typing text 'company@company.com' into text field 'username'.</msg>
+<status status="PASS" starttime="20231008 20:42:43.873" endtime="20231008 20:42:44.063"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>password</arg>
+<arg>company</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 20:42:44.068" level="INFO">Typing text 'company' into text field 'password'.</msg>
+<status status="PASS" starttime="20231008 20:42:44.065" endtime="20231008 20:42:44.197"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Submit</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231008 20:42:44.202" level="INFO">Clicking button 'Submit'.</msg>
+<status status="PASS" starttime="20231008 20:42:44.199" endtime="20231008 20:42:45.160"/>
+</kw>
+<doc>This test case verifies a successful login</doc>
+<status status="PASS" starttime="20231008 20:42:43.867" endtime="20231008 20:42:45.165"/>
+</test>
+<test id="s1-t3" name="Update Text and Submit" line="25">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>first_name</arg>
+<arg>company1</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 20:42:45.185" level="INFO">Typing text 'company1' into text field 'first_name'.</msg>
+<status status="PASS" starttime="20231008 20:42:45.178" endtime="20231008 20:42:45.326"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>last_name</arg>
+<arg>comapny1</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 20:42:45.332" level="INFO">Typing text 'comapny1' into text field 'last_name'.</msg>
+<status status="PASS" starttime="20231008 20:42:45.329" endtime="20231008 20:42:45.487"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>email</arg>
+<arg>company@company.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 20:42:45.493" level="INFO">Typing text 'company@company.com' into text field 'email'.</msg>
+<status status="PASS" starttime="20231008 20:42:45.489" endtime="20231008 20:42:45.655"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>phone</arg>
+<arg>1234567890</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 20:42:45.663" level="INFO">Typing text '1234567890' into text field 'phone'.</msg>
+<status status="PASS" starttime="20231008 20:42:45.657" endtime="20231008 20:42:45.810"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:input[type="submit"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231008 20:42:45.815" level="INFO">Clicking element 'css:input[type="submit"]'.</msg>
+<status status="PASS" starttime="20231008 20:42:45.811" endtime="20231008 20:42:46.232"/>
+</kw>
+<kw name="Alert Should Be Present" library="SeleniumLibrary">
+<arg>Profile Updated Successfully</arg>
+<doc>Verifies that an alert is present and by default, accepts it.</doc>
+<msg timestamp="20231008 20:42:46.240" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<status status="PASS" starttime="20231008 20:42:46.237" endtime="20231008 20:42:46.257"/>
+</kw>
+<doc>This test case updates text and submits the form</doc>
+<status status="PASS" starttime="20231008 20:42:45.170" endtime="20231008 20:42:46.261"/>
+</test>
+<test id="s1-t4" name="Logout" line="34">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//a[@href='/logout/']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231008 20:42:46.282" level="INFO">Clicking element '//a[@href='/logout/']'.</msg>
+<status status="PASS" starttime="20231008 20:42:46.278" endtime="20231008 20:42:46.776"/>
+</kw>
+<doc>This test case verifies that the user can successfully logout</doc>
+<status status="PASS" starttime="20231008 20:42:46.269" endtime="20231008 20:42:46.780"/>
+</test>
+<doc>Company Login Update Details</doc>
+<status status="PASS" starttime="20231008 20:42:40.254" endtime="20231008 20:42:46.788"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="Company Login Update Details">Company Login Update Details</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

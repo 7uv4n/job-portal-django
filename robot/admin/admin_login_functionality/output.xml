@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.7.11 on win32)" generated="20231008 20:15:02.846" rpa="false" schemaversion="4">
+<suite id="s1" name="Admin Login Functionality" source="d:\CDU STUDY MATERIALS\SEMESTER 2\PRT582 SOFTWARE ENGINEERING\job-portal-django\robot\admin\admin_login_functionality\admin_login_functionality.robot">
+<test id="s1-t1" name="Open Website" line="12">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231008 20:15:03.546" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000/admin_login/'.</msg>
+<status status="PASS" starttime="20231008 20:15:03.542" endtime="20231008 20:15:06.064"/>
+</kw>
+<doc>This test case verify user is able to open the URL</doc>
+<status status="PASS" starttime="20231008 20:15:03.538" endtime="20231008 20:15:06.069"/>
+</test>
+<test id="s1-t2" name="Login to your account" line="17">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>username</arg>
+<arg>yuvan</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 20:15:06.089" level="INFO">Typing text 'yuvan' into text field 'username'.</msg>
+<status status="PASS" starttime="20231008 20:15:06.086" endtime="20231008 20:15:06.273"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>password</arg>
+<arg>yuvan</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 20:15:06.279" level="INFO">Typing text 'yuvan' into text field 'password'.</msg>
+<status status="PASS" starttime="20231008 20:15:06.275" endtime="20231008 20:15:06.401"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Submit</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231008 20:15:06.408" level="INFO">Clicking button 'Submit'.</msg>
+<status status="PASS" starttime="20231008 20:15:06.403" endtime="20231008 20:15:08.321"/>
+</kw>
+<status status="PASS" starttime="20231008 20:15:06.077" endtime="20231008 20:15:08.324"/>
+</test>
+<test id="s1-t3" name="Logout" line="22">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//a[@href='/logout/']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231008 20:15:08.334" level="INFO">Clicking element '//a[@href='/logout/']'.</msg>
+<status status="PASS" starttime="20231008 20:15:08.331" endtime="20231008 20:15:08.584"/>
+</kw>
+<doc>This test case verifies that the user can successfully logout</doc>
+<status status="PASS" starttime="20231008 20:15:08.328" endtime="20231008 20:15:08.587"/>
+</test>
+<test id="s1-t4" name="Open Website" line="26">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231008 20:15:08.605" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000/admin_login/'.</msg>
+<status status="PASS" starttime="20231008 20:15:08.602" endtime="20231008 20:15:10.867"/>
+</kw>
+<doc>This test case verifies that the user is able to open the URL</doc>
+<status status="PASS" starttime="20231008 20:15:08.596" endtime="20231008 20:15:10.870"/>
+</test>
+<test id="s1-t5" name="Login with Invalid Credentials" line="30">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>username</arg>
+<arg>invalid_user@abc.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 20:15:10.891" level="INFO">Typing text 'invalid_user@abc.com' into text field 'username'.</msg>
+<status status="PASS" starttime="20231008 20:15:10.887" endtime="20231008 20:15:11.069"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>password</arg>
+<arg>invalid_password</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 20:15:11.073" level="INFO">Typing text 'invalid_password' into text field 'password'.</msg>
+<status status="PASS" starttime="20231008 20:15:11.071" endtime="20231008 20:15:11.229"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Submit</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231008 20:15:11.234" level="INFO">Clicking button 'Submit'.</msg>
+<status status="PASS" starttime="20231008 20:15:11.231" endtime="20231008 20:15:11.537"/>
+</kw>
+<kw name="Alert Should Be Present" library="SeleniumLibrary">
+<arg>Invalid Credentials. Please try again.</arg>
+<doc>Verifies that an alert is present and by default, accepts it.</doc>
+<msg timestamp="20231008 20:15:11.544" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<status status="PASS" starttime="20231008 20:15:11.541" endtime="20231008 20:15:11.559"/>
+</kw>
+<doc>This test case verifies that invalid credentials result in an error message</doc>
+<status status="PASS" starttime="20231008 20:15:10.876" endtime="20231008 20:15:11.563"/>
+</test>
+<doc>Test Cases to verify the Login Functionality of Admin</doc>
+<status status="PASS" starttime="20231008 20:15:02.864" endtime="20231008 20:15:11.571"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="5" fail="0" skip="0" id="s1" name="Admin Login Functionality">Admin Login Functionality</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20231008 20:15:08.594" level="WARN">Multiple tests with name 'Open Website' executed in suite 'Admin Login Functionality'.</msg>
+</errors>
+</robot>

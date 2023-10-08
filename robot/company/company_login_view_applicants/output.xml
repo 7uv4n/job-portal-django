@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.7.11 on win32)" generated="20231008 20:48:53.270" rpa="false" schemaversion="4">
+<suite id="s1" name="Company Login View Applicants" source="d:\CDU STUDY MATERIALS\SEMESTER 2\PRT582 SOFTWARE ENGINEERING\job-portal-django\robot\company\company_login_view_applicants\company_login_view_applicants.robot">
+<test id="s1-t1" name="Open Website" line="14">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231008 20:48:54.200" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000/company_login/'.</msg>
+<status status="PASS" starttime="20231008 20:48:54.192" endtime="20231008 20:48:57.073"/>
+</kw>
+<doc>This test case verifies that the user is able to open the URL</doc>
+<status status="PASS" starttime="20231008 20:48:54.182" endtime="20231008 20:48:57.077"/>
+</test>
+<test id="s1-t2" name="Login to your account" line="18">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>username</arg>
+<arg>company@company.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 20:48:57.094" level="INFO">Typing text 'company@company.com' into text field 'username'.</msg>
+<status status="PASS" starttime="20231008 20:48:57.090" endtime="20231008 20:48:57.338"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>password</arg>
+<arg>company</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 20:48:57.347" level="INFO">Typing text 'company' into text field 'password'.</msg>
+<status status="PASS" starttime="20231008 20:48:57.341" endtime="20231008 20:48:57.543"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Submit</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231008 20:48:57.551" level="INFO">Clicking button 'Submit'.</msg>
+<status status="PASS" starttime="20231008 20:48:57.546" endtime="20231008 20:48:58.479"/>
+</kw>
+<doc>This test case verifies a successful login</doc>
+<status status="PASS" starttime="20231008 20:48:57.083" endtime="20231008 20:48:58.483"/>
+</test>
+<test id="s1-t3" name="Navigate to Another Page for viewing Jobs" line="24">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>http://127.0.0.1:8000/all_applicants/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20231008 20:48:58.497" level="INFO">Opening url 'http://127.0.0.1:8000/all_applicants/'</msg>
+<status status="PASS" starttime="20231008 20:48:58.494" endtime="20231008 20:48:58.912"/>
+</kw>
+<doc>This test case navigates to another page after logging in</doc>
+<status status="PASS" starttime="20231008 20:48:58.488" endtime="20231008 20:48:58.913"/>
+</test>
+<test id="s1-t4" name="View Resume of an Applicant" line="28">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:a[href$="sample_resume.pdf"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231008 20:48:58.923" level="INFO">Clicking element 'css:a[href$="sample_resume.pdf"]'.</msg>
+<status status="PASS" starttime="20231008 20:48:58.921" endtime="20231008 20:48:59.111"/>
+</kw>
+<kw name="Get Location" library="SeleniumLibrary">
+<var>${ActualURL}</var>
+<doc>Returns the current browser window URL.</doc>
+<msg timestamp="20231008 20:48:59.125" level="INFO">${ActualURL} = http://127.0.0.1:8000/media/sample_resume.pdf</msg>
+<status status="PASS" starttime="20231008 20:48:59.114" endtime="20231008 20:48:59.126"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${ActualURL}</arg>
+<arg>http://127.0.0.1:8000/media/sample_resume.pdf</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20231008 20:48:59.129" endtime="20231008 20:48:59.133"/>
+</kw>
+<doc>This test case views Resume of an applicant</doc>
+<status status="PASS" starttime="20231008 20:48:58.917" endtime="20231008 20:48:59.136"/>
+</test>
+<doc>Test Case to check whether a company user can view the Job Applicants and check their resume</doc>
+<status status="PASS" starttime="20231008 20:48:53.287" endtime="20231008 20:48:59.144"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="Company Login View Applicants">Company Login View Applicants</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

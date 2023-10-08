@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.7.11 on win32)" generated="20231008 20:40:22.935" rpa="false" schemaversion="4">
+<suite id="s1" name="Company Login Signing Up" source="d:\CDU STUDY MATERIALS\SEMESTER 2\PRT582 SOFTWARE ENGINEERING\job-portal-django\robot\company\company_login_signing_up\company_login_signing_up.robot">
+<test id="s1-t1" name="Open Website" line="19">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231008 20:40:23.877" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000/company_signup/'.</msg>
+<status status="PASS" starttime="20231008 20:40:23.870" endtime="20231008 20:40:26.827"/>
+</kw>
+<doc>This test case verifies that the user is able to open the URL</doc>
+<status status="PASS" starttime="20231008 20:40:23.864" endtime="20231008 20:40:26.831"/>
+</test>
+<test id="s1-t2" name="Sign Up" line="23">
+<kw name="Generate Random Email">
+<var>${email}</var>
+<kw name="Generate Random String" library="String">
+<var>${random_string}</var>
+<arg>10</arg>
+<arg>abcdefghijklmnopqrstuvwxyz0123456789</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20231008 20:40:26.857" level="INFO">${random_string} = dmppmi46a0</msg>
+<status status="PASS" starttime="20231008 20:40:26.853" endtime="20231008 20:40:26.859"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${email}</var>
+<arg>user_${random_string}@test.com</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231008 20:40:26.865" level="INFO">${email} = user_dmppmi46a0@test.com</msg>
+<status status="PASS" starttime="20231008 20:40:26.861" endtime="20231008 20:40:26.866"/>
+</kw>
+<msg timestamp="20231008 20:40:26.868" level="INFO">${email} = user_dmppmi46a0@test.com</msg>
+<status status="PASS" starttime="20231008 20:40:26.850" endtime="20231008 20:40:26.868"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>first_name</arg>
+<arg>First Name Test</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 20:40:26.875" level="INFO">Typing text 'First Name Test' into text field 'first_name'.</msg>
+<status status="PASS" starttime="20231008 20:40:26.871" endtime="20231008 20:40:27.058"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>last_name</arg>
+<arg>Last Name Test</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 20:40:27.066" level="INFO">Typing text 'Last Name Test' into text field 'last_name'.</msg>
+<status status="PASS" starttime="20231008 20:40:27.060" endtime="20231008 20:40:27.213"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>username</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 20:40:27.217" level="INFO">Typing text 'user_dmppmi46a0@test.com' into text field 'username'.</msg>
+<status status="PASS" starttime="20231008 20:40:27.215" endtime="20231008 20:40:27.374"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>password1</arg>
+<arg>testpassword</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 20:40:27.387" level="INFO">Typing password into text field 'password1'.</msg>
+<msg timestamp="20231008 20:40:27.485" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20231008 20:40:27.567" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20231008 20:40:27.380" endtime="20231008 20:40:27.569"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>password2</arg>
+<arg>testpassword</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 20:40:27.576" level="INFO">Typing password into text field 'password2'.</msg>
+<msg timestamp="20231008 20:40:27.656" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20231008 20:40:27.739" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20231008 20:40:27.571" endtime="20231008 20:40:27.740"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>email</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 20:40:27.746" level="INFO">Typing text 'user_dmppmi46a0@test.com' into text field 'email'.</msg>
+<status status="PASS" starttime="20231008 20:40:27.742" endtime="20231008 20:40:27.896"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>phone</arg>
+<arg>1234567890</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 20:40:27.902" level="INFO">Typing text '1234567890' into text field 'phone'.</msg>
+<status status="PASS" starttime="20231008 20:40:27.899" endtime="20231008 20:40:28.051"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:male</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231008 20:40:28.059" level="INFO">Clicking element 'id:male'.</msg>
+<status status="PASS" starttime="20231008 20:40:28.055" endtime="20231008 20:40:28.142"/>
+</kw>
+<kw name="Choose File" library="SeleniumLibrary">
+<arg>image</arg>
+<arg>${FilePath}</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<msg timestamp="20231008 20:40:28.149" level="INFO">Sending D:\CDU STUDY MATERIALS\SEMESTER 2\PRT582 SOFTWARE ENGINEERING\job-portal-django\robot\company\company_login_signing_up\sample_logo.png to browser.</msg>
+<status status="PASS" starttime="20231008 20:40:28.144" endtime="20231008 20:40:28.215"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>company_name</arg>
+<arg>Test Company Name</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 20:40:28.222" level="INFO">Typing text 'Test Company Name' into text field 'company_name'.</msg>
+<status status="PASS" starttime="20231008 20:40:28.218" endtime="20231008 20:40:28.346"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Submit</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231008 20:40:28.351" level="INFO">Clicking button 'Submit'.</msg>
+<status status="PASS" starttime="20231008 20:40:28.348" endtime="20231008 20:40:29.169"/>
+</kw>
+<doc>This test case verifies whether sign up functionality is working well</doc>
+<status status="PASS" starttime="20231008 20:40:26.839" endtime="20231008 20:40:29.172"/>
+</test>
+<doc>Signing Up new account for Company Login</doc>
+<status status="PASS" starttime="20231008 20:40:22.953" endtime="20231008 20:40:29.179"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Company Login Signing Up">Company Login Signing Up</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.7.11 on win32)" generated="20231008 20:32:53.861" rpa="false" schemaversion="4">
+<suite id="s1" name="User Login Update Details" source="d:\CDU STUDY MATERIALS\SEMESTER 2\PRT582 SOFTWARE ENGINEERING\job-portal-django\robot\applicant\user_login_update_details\user_login_update_details.robot">
+<test id="s1-t1" name="Open Website" line="16">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231008 20:32:54.604" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000/user_login/'.</msg>
+<status status="PASS" starttime="20231008 20:32:54.600" endtime="20231008 20:32:57.259"/>
+</kw>
+<doc>This test case verifies that the user is able to open the URL</doc>
+<status status="PASS" starttime="20231008 20:32:54.596" endtime="20231008 20:32:57.265"/>
+</test>
+<test id="s1-t2" name="Login to your account" line="20">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>username</arg>
+<arg>abc@abc.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 20:32:57.283" level="INFO">Typing text 'abc@abc.com' into text field 'username'.</msg>
+<status status="PASS" starttime="20231008 20:32:57.278" endtime="20231008 20:32:57.438"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>password</arg>
+<arg>abc</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 20:32:57.444" level="INFO">Typing text 'abc' into text field 'password'.</msg>
+<status status="PASS" starttime="20231008 20:32:57.440" endtime="20231008 20:32:57.618"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Submit</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231008 20:32:57.626" level="INFO">Clicking button 'Submit'.</msg>
+<status status="PASS" starttime="20231008 20:32:57.621" endtime="20231008 20:32:58.469"/>
+</kw>
+<doc>This test case verifies a successful login</doc>
+<status status="PASS" starttime="20231008 20:32:57.272" endtime="20231008 20:32:58.472"/>
+</test>
+<test id="s1-t3" name="Update Text and Submit" line="26">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>first_name</arg>
+<arg>abcde</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 20:32:58.489" level="INFO">Typing text 'abcde' into text field 'first_name'.</msg>
+<status status="PASS" starttime="20231008 20:32:58.484" endtime="20231008 20:32:58.678"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>last_name</arg>
+<arg>abcde</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 20:32:58.685" level="INFO">Typing text 'abcde' into text field 'last_name'.</msg>
+<status status="PASS" starttime="20231008 20:32:58.680" endtime="20231008 20:32:58.892"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>email</arg>
+<arg>abc@abc.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 20:32:58.899" level="INFO">Typing text 'abc@abc.com' into text field 'email'.</msg>
+<status status="PASS" starttime="20231008 20:32:58.894" endtime="20231008 20:32:59.055"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>phone</arg>
+<arg>1234567890</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 20:32:59.062" level="INFO">Typing text '1234567890' into text field 'phone'.</msg>
+<status status="PASS" starttime="20231008 20:32:59.058" endtime="20231008 20:32:59.207"/>
+</kw>
+<kw name="Choose File" library="SeleniumLibrary">
+<arg>image</arg>
+<arg>${FilePath}</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<msg timestamp="20231008 20:32:59.213" level="INFO">Sending D:\CDU STUDY MATERIALS\SEMESTER 2\PRT582 SOFTWARE ENGINEERING\job-portal-django\robot\applicant\user_login_update_details\profile_pic.jpg to browser.</msg>
+<status status="PASS" starttime="20231008 20:32:59.210" endtime="20231008 20:32:59.276"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Submit</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231008 20:32:59.283" level="INFO">Clicking button 'Submit'.</msg>
+<status status="PASS" starttime="20231008 20:32:59.278" endtime="20231008 20:32:59.819"/>
+</kw>
+<kw name="Alert Should Be Present" library="SeleniumLibrary">
+<arg>Profile Updated Successfully</arg>
+<doc>Verifies that an alert is present and by default, accepts it.</doc>
+<msg timestamp="20231008 20:32:59.823" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<status status="PASS" starttime="20231008 20:32:59.822" endtime="20231008 20:32:59.840"/>
+</kw>
+<doc>This test case updates text and submits the form</doc>
+<status status="PASS" starttime="20231008 20:32:58.478" endtime="20231008 20:32:59.843"/>
+</test>
+<test id="s1-t4" name="Logout" line="36">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//a[@href='/logout/']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231008 20:32:59.854" level="INFO">Clicking element '//a[@href='/logout/']'.</msg>
+<status status="PASS" starttime="20231008 20:32:59.851" endtime="20231008 20:33:00.143"/>
+</kw>
+<doc>This test case verifies that the user can successfully logout</doc>
+<status status="PASS" starttime="20231008 20:32:59.847" endtime="20231008 20:33:00.145"/>
+</test>
+<doc>Test case to check whether Job Applicant can update details</doc>
+<status status="PASS" starttime="20231008 20:32:53.880" endtime="20231008 20:33:00.151"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="User Login Update Details">User Login Update Details</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

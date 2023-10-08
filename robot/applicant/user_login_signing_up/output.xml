@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.7.11 on win32)" generated="20231008 20:28:52.225" rpa="false" schemaversion="4">
+<suite id="s1" name="User Login Signing Up" source="d:\CDU STUDY MATERIALS\SEMESTER 2\PRT582 SOFTWARE ENGINEERING\job-portal-django\robot\applicant\user_login_signing_up\user_login_signing_up.robot">
+<test id="s1-t1" name="Open Website" line="20">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231008 20:28:52.926" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000/signup/'.</msg>
+<status status="PASS" starttime="20231008 20:28:52.921" endtime="20231008 20:28:55.697"/>
+</kw>
+<doc>This test case verifies that the user is able to open the URL</doc>
+<status status="PASS" starttime="20231008 20:28:52.913" endtime="20231008 20:28:55.702"/>
+</test>
+<test id="s1-t2" name="Sign Up" line="24">
+<kw name="Generate Random Email">
+<var>${email}</var>
+<kw name="Generate Random String" library="String">
+<var>${random_string}</var>
+<arg>10</arg>
+<arg>abcdefghijklmnopqrstuvwxyz0123456789</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20231008 20:28:55.724" level="INFO">${random_string} = halw433llf</msg>
+<status status="PASS" starttime="20231008 20:28:55.720" endtime="20231008 20:28:55.725"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${email}</var>
+<arg>user_${random_string}@test.com</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231008 20:28:55.733" level="INFO">${email} = user_halw433llf@test.com</msg>
+<status status="PASS" starttime="20231008 20:28:55.728" endtime="20231008 20:28:55.733"/>
+</kw>
+<msg timestamp="20231008 20:28:55.735" level="INFO">${email} = user_halw433llf@test.com</msg>
+<status status="PASS" starttime="20231008 20:28:55.717" endtime="20231008 20:28:55.737"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>first_name</arg>
+<arg>First Name Test User1</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 20:28:55.745" level="INFO">Typing text 'First Name Test User1' into text field 'first_name'.</msg>
+<status status="PASS" starttime="20231008 20:28:55.739" endtime="20231008 20:28:56.044"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>last_name</arg>
+<arg>Last Name Test User1</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 20:28:56.052" level="INFO">Typing text 'Last Name Test User1' into text field 'last_name'.</msg>
+<status status="PASS" starttime="20231008 20:28:56.047" endtime="20231008 20:28:56.231"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>password1</arg>
+<arg>testpassword1</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 20:28:56.239" level="INFO">Typing password into text field 'password1'.</msg>
+<msg timestamp="20231008 20:28:56.322" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20231008 20:28:56.477" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20231008 20:28:56.233" endtime="20231008 20:28:56.479"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>password2</arg>
+<arg>testpassword1</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 20:28:56.488" level="INFO">Typing password into text field 'password2'.</msg>
+<msg timestamp="20231008 20:28:56.586" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20231008 20:28:56.743" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20231008 20:28:56.483" endtime="20231008 20:28:56.745"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>email</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 20:28:56.756" level="INFO">Typing text 'user_halw433llf@test.com' into text field 'email'.</msg>
+<status status="PASS" starttime="20231008 20:28:56.749" endtime="20231008 20:28:56.904"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>phone</arg>
+<arg>12345678901</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231008 20:28:56.911" level="INFO">Typing text '12345678901' into text field 'phone'.</msg>
+<status status="PASS" starttime="20231008 20:28:56.906" endtime="20231008 20:28:57.065"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id:male</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231008 20:28:57.071" level="INFO">Clicking element 'id:male'.</msg>
+<status status="PASS" starttime="20231008 20:28:57.067" endtime="20231008 20:28:57.152"/>
+</kw>
+<kw name="Choose File" library="SeleniumLibrary">
+<arg>image</arg>
+<arg>${FilePath}</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<msg timestamp="20231008 20:28:57.159" level="INFO">Sending D:\CDU STUDY MATERIALS\SEMESTER 2\PRT582 SOFTWARE ENGINEERING\job-portal-django\robot\applicant\user_login_signing_up\profile_pic.jpg to browser.</msg>
+<status status="PASS" starttime="20231008 20:28:57.156" endtime="20231008 20:28:57.239"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Submit</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231008 20:28:57.246" level="INFO">Clicking button 'Submit'.</msg>
+<status status="PASS" starttime="20231008 20:28:57.242" endtime="20231008 20:28:57.921"/>
+</kw>
+<doc>This test case verifies whether sign up functionality is working well</doc>
+<status status="PASS" starttime="20231008 20:28:55.710" endtime="20231008 20:28:57.926"/>
+</test>
+<doc>Signing Up new account for Company Login</doc>
+<status status="PASS" starttime="20231008 20:28:52.239" endtime="20231008 20:28:57.933"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="User Login Signing Up">User Login Signing Up</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
